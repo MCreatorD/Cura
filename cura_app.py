@@ -65,8 +65,8 @@ if not known_args["debug"]:
     if hasattr(sys, "frozen") and "cli" not in os.path.basename(sys.argv[0]).lower():
         dirpath = get_cura_dir_path()
         os.makedirs(dirpath, exist_ok = True)
-        sys.stdout = open(os.path.join(dirpath, "stdout.log"), "w", encoding = "utf-8")
-        sys.stderr = open(os.path.join(dirpath, "stderr.log"), "w", encoding = "utf-8")
+        #sys.stdout = open(os.path.join(dirpath, "stdout.log"), "w", encoding = "utf-8")
+        #sys.stderr = open(os.path.join(dirpath, "stderr.log"), "w", encoding = "utf-8")
 
 
 # WORKAROUND: GITHUB-88 GITHUB-385 GITHUB-612
@@ -171,6 +171,7 @@ else:
 # tries to create PyQt objects on a non-main thread.
 import Arcus #@UnusedImport
 import Savitar #@UnusedImport
+
 from cura.CuraApplication import CuraApplication
 
 
